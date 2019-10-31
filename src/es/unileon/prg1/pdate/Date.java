@@ -33,8 +33,7 @@ public class Date {
 		}
 	}
 	public boolean isSameYear(Date miFecha) {
-		boolean remote = false;
-		if(this.year=miFecha.getYear());
+		return (this.year==miFecha.getYear());
 	}
 	public boolean isSameYear(int miYear) {
 		boolean remote = false;
