@@ -5,7 +5,7 @@ package es.unileon.prg1.pdate;
  *
  */
 public class Date {
-	private int day;
+	setday(day);
 	private int month;
 	private int year;
 
@@ -22,9 +22,15 @@ public class Date {
 	 */
 		
 	public Date(int day, int month, int year){
+		if((day <32)&&(day>0)&&(month>o)&&(month<13)&&(year>-1)){
 		this.day = day;
 		this.month= month;
 		this.year = year;
+		}
+		else {
+			throw new DateException("Fecha fuera del intervalo");
+			}
+		}
 	}
 	public boolean isSameYear(Date miFecha) {
 		boolean remote = false;
