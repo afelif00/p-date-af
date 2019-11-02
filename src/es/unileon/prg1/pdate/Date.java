@@ -6,8 +6,8 @@ package es.unileon.prg1.pdate;
  */
 public class Date {
 	setday(day);
-	private int month;
-	private int year;
+	setmonth(month);
+	setyear(month);
 
 	Date(){
 		this.day = 1;
@@ -30,19 +30,73 @@ public class Date {
 		else {
 			throw new DateException("Fecha fuera del intervalo");
 			}
-		}
 	}
+	public void setDay(int day)throws DateException {
+		if ((day < 32)&&(day > 0))
+			this.day = day;
+		else
+			throw new DateException("Fecha fuera del intervalo");
+		
+	}
+	
+	
+	public int getMonth() {
+		return month;
+	}
+	public void setMonth(int month) {
+		if ((month < 13)&&(month > 0))
+			this.month = month;
+		else
+			throw new DateException("Fecha fuera del intervalo");
+		
+	}
+	
+	public int getYear() {
+		return year;
+	}
+	
+	public void setYear(int year) {
+		if(year >-1);
+	}
+	
+	
+	
 	public boolean isSameYear(Date miFecha) {
 		return (this.year==miFecha.getYear());
 	}
 	public boolean isSameYear(int miYear) {
 		boolean remote = false;
+		
 		if(this.year == miYeaer)
+			
 			retorno = true;
-		System.out.println("opcion Enteros");
+	
+			System.out.println("opcion Enteros");
 		return retorno;
-	
-	
+	}
+	public boolean isSameYearNoIf(Date  miFecha) {
+		
+		Systeam.out.println ("opcion No IF");
+		
+		return (this.year == miFecha.getYa());
+		
+	}
+	punblic int getYear() {
+		return year;
+	}
+	}
+		public boolean setYear(int Year) {
+			boolean remote = false;
+			
+			if(year > -1)
+				
+				retorno = true;
+			System.out.println("opcion Enteros");
+			return retorno;
+			
+
+				
+
 	public String toString() {
 		return "DATE[day"+day+", month="+month+", year="+year+"]";
 	}
