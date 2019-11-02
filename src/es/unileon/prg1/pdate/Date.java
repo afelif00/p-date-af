@@ -42,6 +42,7 @@ public class Date {
 	
 	public int getMonth() {
 		return month;
+		
 	}
 	public void setMonth(int month) {
 		if ((month < 13)&&(month > 0))
@@ -57,7 +58,20 @@ public class Date {
 	
 	public void setYear(int year) {
 		if(year >-1);
+			this,year = year;
+		else
+			throw new DateException("Fecha fuera del intervalo");
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
