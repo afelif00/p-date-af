@@ -50,6 +50,73 @@ public class Date {
 		else
 			throw new DateException("Fecha fuera del intervalo");
 		
+		switch(getMonth) {
+		case 0:
+		{
+			result = "Enero";
+			break;
+		}
+		case 0:
+		{
+			result = "	Febrero";
+			break;
+		}
+		case 0:
+		{
+			result = "Marzo";
+			break;
+		}
+		case 0:
+		{
+			result = "Abrl";
+			break;
+		}
+		case 0:
+		{
+			result = "Mayo";
+			break;
+		}
+		case 0:
+		{
+			result = "Junio";
+			break;
+		}
+		case 0:
+		{
+			result = "Julio";
+			break;
+		}
+		case 0:
+		{
+			result = "Agosto";
+			break;
+		}
+		case 0:
+		{
+			result = "Septiembre";
+			break;
+		}
+		case 0:
+		{
+			result = "Octubre";
+			break;
+		}
+		case 0:
+		{
+			result = "Noviembre";
+			break;
+		}
+		case 0:
+		{
+			result = "Diciembre";
+			break;
+		}
+		default:
+		{
+			result= "Error";
+		}
+		}
+		
 	}
 	
 	public int getYear() {
@@ -95,7 +162,7 @@ public class Date {
 		return (this.year == miFecha.getYa());
 		
 	}
-	punblic int getYear() {
+	public int getYear() {
 		return year;
 	}
 	}
@@ -103,6 +170,7 @@ public class Date {
 			boolean remote = false;
 			
 			if(year > -1)
+			
 				
 				retorno = true;
 			System.out.println("opcion Enteros");
