@@ -8,7 +8,7 @@ public class Date {
 	private int day;
 	private int month;
 	private int year;
-
+	
 	
 
 	void Date(){
@@ -44,52 +44,7 @@ public class Date {
 		
 	}
 	
-	//ACABAR ESTACIONES
-	public String getSeason() {
-		String estacion;
-		//primavera marzo junio
-		switch(this.month) {
-		case 3:
-		case 4:
-		case 5:
-		{
-			estacion = "primavera";
-		
-			break;
-		}
-		//verano junio septiembre
-		case 6:
-		case 7:
-		case 8:
-		{
-			estacion = "verano";
-			break;
-		}
-		//otoño septiembre diciembre
-		case 9 :
-		case 10 :
-		case 11 :
-		{
-			estacion = "otoño";
-			break;
-		}
-		//invierno diciembre marzo
-		case 12:
-		case 1:
-		case 2:
-		{
-			estacion = "invierno";
-			break;
-		}
-		default:
-		{
-			estacion= "Error";
-		}
-		{
-		return  estacion;
-		} 
-	}
-}
+
 	public int getMonth() {
 		return this.month;
 		
@@ -103,94 +58,6 @@ public class Date {
 		
 	}
 	
-	public String getMonthName() {
-		String result;
-		
-		switch(this.month) {
-		case 1:
-		{
-			result = "Enero";
-			break;
-		}
-		case 2:
-		{
-			result = "	Febrero";
-			break;
-		}
-		case 3:
-		{
-			result = "Marzo";
-			break;
-		}
-		case 4:
-		{
-			result = "Abrl";
-			break;
-		}
-		case 5:
-		{
-			result = "Mayo";
-			break;
-		}
-		case 6:
-		{
-			result = "Junio";
-			break;
-		}
-		case 7:
-		{
-			result = "Julio";
-			break;
-		}
-		case 8:
-		{
-			result = "Agosto";
-			break;
-		}
-		case 9:
-		{
-			result = "Septiembre";
-			break;
-		}
-		case 10:
-		{
-			result = "Octubre";
-			break;
-		}
-		case 11:
-		{
-			result = "Noviembre";
-			break;
-		}
-		case 12:
-		{
-			result = "Diciembre";
-			break;
-		}
-		default:
-		{
-			result= "Error";
-		
-	}
-		}
-		return  result;
-	} 
-
-
-
-	
-	
-	
-	public int getYear() {
-		return year;
-	}
-	
-	public void setYear(int year) {
-		if(year >-1);
-			this.year = year;
-		else
-			throw new DateException("Fecha fuera del intervalo");
-	}
 	
 	
 	//HACER LO MISMO CON MONTH Y DAY
@@ -322,7 +189,7 @@ public class Date {
 				
 				System.out.println ("opcion No IF");
 				
-				return (this.day == miFecha.getDay());
+				return (this.day == miDay.getDay());
 				
 			}
 			
@@ -347,7 +214,210 @@ public class Date {
 					System.out.println("opcion Enteros");
 					return remote;
 				}
+			//issame
+				public boolean isSame(int day,int month,int year ) {
+					boolean retorno = false;
+					
+					if(this.day == day && this.month== month && this.year == year  )
+						
+						retorno = true;
 				
+						System.out.println("es el mismo");
+					return retorno;
+				}
+				public boolean isSame(Date issame) {
+					boolean retorno = false;
+					
+					if(this.day == issame.getDay() && this.month== issame.getMonth() && this.year == issame.getYear())
+						
+						retorno = true;
+				
+						System.out.println("es el mismo");
+					return retorno;
+				}
+				
+				public boolean isSameNoIf(int day,int month,int year ) {
+
+						System.out.println("es el mismo");
+					return (this.day == day && this.month== month && this.year == year);
+				}
+				public boolean isSameNoIf(Date issame) {
+			
+						System.out.println("es el mismo");
+					return (this.day == issame.getDay() && this.month== issame.getMonth() && this.year == issame.getYear());
+				}
+				
+				//MESES
+				public String getMonthName() {
+					String result;
+					
+					switch(this.month) {
+					case 1:
+					{
+						result = "Enero";
+						break;
+					}
+					case 2:
+					{
+						result = "	Febrero";
+						break;
+					}
+					case 3:
+					{
+						result = "Marzo";
+						break;
+					}
+					case 4:
+					{
+						result = "Abrl";
+						break;
+					}
+					case 5:
+					{
+						result = "Mayo";
+						break;
+					}
+					case 6:
+					{
+						result = "Junio";
+						break;
+					}
+					case 7:
+					{
+						result = "Julio";
+						break;
+					}
+					case 8:
+					{
+						result = "Agosto";
+						break;
+					}
+					case 9:
+					{
+						result = "Septiembre";
+						break;
+					}
+					case 10:
+					{
+						result = "Octubre";
+						break;
+					}
+					case 11:
+					{
+						result = "Noviembre";
+						break;
+					}
+					case 12:
+					{
+						result = "Diciembre";
+						break;
+					}
+					default:
+					{
+						result= "Error";
+					
+				}
+					}
+					return  result;
+				} 
+				//verificar dias
+				public boolean getDiasMes(){
+					boolean devol = false;
+					
+				switch(this.month){
+					case 2:
+					{
+						if(this.day> 0 && this.day < 29)
+							devol = true;
+						break;
+					}
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+					{
+						if(this.day>0 && this.day < 31)
+							devol = true;
+						break;
+					}
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+					case 12:
+					{
+						if(this.day > 0 && this.day < 32)
+							devol = true;
+						break;
+					}
+					default:
+					{
+						devol= false;	
+					}
+				}					
+					
+					return devol;
+				}
+				
+				//ESTACIONES
+				public String getSeason() {
+					String estacion;
+					//primavera marzo junio
+					switch(this.month) {
+					case 3:
+					case 4:
+					case 5:
+					{
+						estacion = "primavera";
+					
+						break;
+					}
+					//verano junio septiembre
+					case 6:
+					case 7:
+					case 8:
+					{
+						estacion = "verano";
+						break;
+					}
+					//otoño septiembre diciembre
+					case 9 :
+					case 10 :
+					case 11 :
+					{
+						estacion = "otoño";
+						break;
+					}
+					//invierno diciembre marzo
+					case 12:
+					case 1:
+					case 2:
+					{
+						estacion = "invierno";
+						break;
+					}
+					default:
+					{
+						estacion= "Error";
+					}
+					
+				}
+					return  estacion;
+			}
+			//MESES RESTANTES
+				public int getMonthsLeft() {
+					if()
+				}
+				
+				
+				public void setYear(int year) {
+					if(year >-1);
+						this.year = year;
+					else
+						throw new DateException("Fecha fuera del intervalo");
+				}	
 				
 			public void setday(int day) {
 					this.day = day ;
@@ -358,6 +428,7 @@ public class Date {
 			public void setyear(int year) {
 					this.year =year;
 			}
+			
 			public int getday(int day) {
 				return day ;
 			}
@@ -367,6 +438,14 @@ public class Date {
 			public int getyear(int year) {
 				return year;
 			}
+
+	public int ranFecha() {
+		int aleatorio = 0;
+		
+		aleatorio = new Random();
+		
+	}
+	//devolver
 	public String toString() {
 		return "DATE[day"+day+", month="+month+", year="+year+"]";
 	}
