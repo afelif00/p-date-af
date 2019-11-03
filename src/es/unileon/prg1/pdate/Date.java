@@ -9,10 +9,15 @@ public class Date {
 	private int month;
 	private int year;
 
-	Date(){
+	
+
+	void Date(){
 		this.day = 1;
 		this.month= 1;
 		this.year = 2020;
+		setDay(day);
+		setMonth(month);
+		setYear(year);
 		}
 	/**
 	 * 
@@ -31,7 +36,7 @@ public class Date {
 			throw new DateException("Fecha fuera del intervalo");
 			}
 	}
-	public void setDay(int day)throws DateException {
+	public void setDay1(int day)throws DateException {
 		if ((day < 32)&&(day > 0))
 			this.day = day;
 		else
@@ -47,15 +52,15 @@ public class Date {
 		case 3:
 		case 4:
 		case 5:
-		case 6:
+		{
 			estacion = "primavera";
+		
 			break;
 		}
 		//verano junio septiembre
 		case 6:
 		case 7:
 		case 8:
-		case 9:
 		{
 			estacion = "verano";
 			break;
@@ -64,16 +69,14 @@ public class Date {
 		case 9 :
 		case 10 :
 		case 11 :
-		case 12 :
 		{
 			estacion = "otoño";
 			break;
 		}
 		//invierno diciembre marzo
-		case 12 :
-		case 1 :
-		case 2 :
-		case 3 :
+		case 12:
+		case 1:
+		case 2:
 		{
 			estacion = "invierno";
 			break;
@@ -82,10 +85,11 @@ public class Date {
 		{
 			estacion= "Error";
 		}
-		return estacion;
-	} 
-	
-	
+		{
+		return  estacion;
+		} 
+	}
+}
 	public int getMonth() {
 		return this.month;
 		
@@ -169,7 +173,7 @@ public class Date {
 		
 	}
 		}
-		return = result;
+		return  result;
 	} 
 
 
@@ -183,11 +187,10 @@ public class Date {
 	
 	public void setYear(int year) {
 		if(year >-1);
-			this,year = year;
+			this.year = year;
 		else
 			throw new DateException("Fecha fuera del intervalo");
 	}
-	
 	
 	
 	//HACER LO MISMO CON MONTH Y DAY
@@ -227,11 +230,11 @@ public class Date {
 		return (this.year == miYear);
 		
 	}
-	public int getYear() {
+	public int getYear1() {
 		return year;
 	}
 	
-		public boolean setYear(int Year) {
+		public boolean setYear1(int Year) {
 			boolean remote = false;
 			
 			if(year > -1)
@@ -278,19 +281,19 @@ public class Date {
 			return (this.month == miMonth);
 			
 		}
-		public int getMonth() {
+		public int getMonth1(){
 			return month;
 		}
 		
-			public boolean setMonth(int month) {
+			public boolean setMonth1(int month) {
 				boolean remote = false;
 				
 				if(month > -1)
 				
 					
-					retorno = true;
+					remote = true;
 				System.out.println("opcion Enteros");
-				return retorno;
+				return remote;
 			}
 				
 			// DAY
@@ -334,16 +337,36 @@ public class Date {
 				return day;
 			}
 			
-				public boolean setDay(int Day) {
+				public boolean setDay(int day) {
 					boolean remote = false;
 					
 					if(year > -1)
 					
 						
-						retorno = true;
+						remote = true;
 					System.out.println("opcion Enteros");
-					return retorno;
+					return remote;
 				}
+				
+				
+			public void setday(int day) {
+					this.day = day ;
+			}
+			public void setmonth(int month) {
+					this.month =month;
+			}
+			public void setyear(int year) {
+					this.year =year;
+			}
+			public int getday(int day) {
+				return day ;
+			}
+			public int getmonth(int month) {
+					return month;
+			}
+			public int getyear(int year) {
+				return year;
+			}
 	public String toString() {
 		return "DATE[day"+day+", month="+month+", year="+year+"]";
 	}
