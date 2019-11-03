@@ -42,14 +42,46 @@ public class Date {
 	//ACABAR ESTACIONES
 	public String getSeason() {
 		String estacion;
+		//primavera marzo junio
 		switch(this.month) {
 		case 3:
 		case 4:
 		case 5:
+		case 6:
 			estacion = "primavera";
 			break;
 		}
-		
+		//verano junio septiembre
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		{
+			estacion = "verano";
+			break;
+		}
+		//otoño septiembre diciembre
+		case 9 :
+		case 10 :
+		case 11 :
+		case 12 :
+		{
+			estacion = "otoño";
+			break;
+		}
+		//invierno diciembre marzo
+		case 12 :
+		case 1 :
+		case 2 :
+		case 3 :
+		{
+			estacion = "invierno";
+			break;
+		}
+		default:
+		{
+			estacion= "Error";
+		}
 		return estacion;
 	} 
 	
@@ -134,122 +166,14 @@ public class Date {
 		default:
 		{
 			result= "Error";
-		}
-		}
-		return result;
+		
 	}
-	
-	public String getMonthName() {
-		String result;
-		
-		switch(this.month) {
-		//primavera marzo junio
-		case 3 :
-		case 4 :
-		case 5 :
-		case 6 :
-		{
-			result = "primavera";
-			break;
 		}
-		//verano junio septiembre
-		case 6 :
-		case 7 :
-		case 8 :
-		case 9 :
-		{
-			result = "verano";
-			break;
-		}
-		//otoño septiembre diciembre
-		case 9 :
-		case 10 :
-		case 11 :
-		case 12 :
-		{
-			result = "otoño";
-			break;
-		}
-		//invierno diciembre marzo
-		case 12 :
-		case 1 :
-		case 2 :
-		case 3 :
-		{
-			result = "invierno";
-			break;
-		}
-		
-		
-		case 1:
-		{
-			result = "Enero";
-			break;
-		}
-		case 2:
-		{
-			result = "	Febrero";
-			break;
-		}
-		case 3:
-		{
-			result = "Marzo";
-			break;
-		}
-		case 4:
-		{
-			result = "Abrl";
-			break;
-		}
-		case 5:
-		{
-			result = "Mayo";
-			break;
-		}
-		case 6:
-		{
-			result = "Junio";
-			break;
-		}
-		case 7:
-		{
-			result = "Julio";
-			break;
-		}
-		case 8:
-		{
-			result = "Agosto";
-			break;
-		}
-		case 9:
-		{
-			result = "Septiembre";
-			break;
-		}
-		case 10:
-		{
-			result = "Octubre";
-			break;
-		}
-		case 11:
-		{
-			result = "Noviembre";
-			break;
-		}
-		case 12:
-		{
-			result = "Diciembre";
-			break;
-		}
-		default:
-		{
-			result= "Error";
-		}
-		}
-		return result;
-	}
-	
-	
+		return = result;
+	} 
+
+
+
 	
 	
 	
