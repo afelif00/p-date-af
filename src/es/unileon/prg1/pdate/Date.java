@@ -5,6 +5,9 @@ package es.unileon.prg1.pdate;
  *
  */
 public class Date {
+	private int day;
+	private int month;
+	private int year;
 	setday(day);
 	setmonth(month);
 	setyear(month);
@@ -39,9 +42,23 @@ public class Date {
 		
 	}
 	
+	//ACABAR ESTACIONES
+	public String getSeason() {
+		String estacion;
+		switch(this.month) {
+		case 3:
+		case 4:
+		case 5:
+			estacion = "primavera";
+			break;
+		}
+		
+		return estacion;
+	} 
+	
 	
 	public int getMonth() {
-		return month;
+		return this.month;
 		
 	}
 	public void setMonth(int month) {
@@ -50,63 +67,69 @@ public class Date {
 		else
 			throw new DateException("Fecha fuera del intervalo");
 		
-		switch(getMonth) {
-		case 0:
+		
+	}
+	
+	public String getMonthName() {
+		String result;
+		
+		switch(this.month) {
+		case 1:
 		{
 			result = "Enero";
 			break;
 		}
-		case 0:
+		case 2:
 		{
 			result = "	Febrero";
 			break;
 		}
-		case 0:
+		case 3:
 		{
 			result = "Marzo";
 			break;
 		}
-		case 0:
+		case 4:
 		{
 			result = "Abrl";
 			break;
 		}
-		case 0:
+		case 5:
 		{
 			result = "Mayo";
 			break;
 		}
-		case 0:
+		case 6:
 		{
 			result = "Junio";
 			break;
 		}
-		case 0:
+		case 7:
 		{
 			result = "Julio";
 			break;
 		}
-		case 0:
+		case 8:
 		{
 			result = "Agosto";
 			break;
 		}
-		case 0:
+		case 9:
 		{
 			result = "Septiembre";
 			break;
 		}
-		case 0:
+		case 10:
 		{
 			result = "Octubre";
 			break;
 		}
-		case 0:
+		case 11:
 		{
 			result = "Noviembre";
 			break;
 		}
-		case 0:
+		case 12:
 		{
 			result = "Diciembre";
 			break;
@@ -116,7 +139,7 @@ public class Date {
 			result= "Error";
 		}
 		}
-		
+		return result;
 	}
 	
 	public int getYear() {
@@ -132,23 +155,22 @@ public class Date {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	//HACER LO MISMO CON MONTH Y DAY
 	
 	public boolean isSameYear(Date miFecha) {
-		return (this.year==miFecha.getYear());
+		boolean retorno = false;
+		
+		if(this.year == miFecha.getYear())
+			
+			retorno = true;
+	
+			System.out.println("opcion Fechas");
+		return retorno;
 	}
 	public boolean isSameYear(int miYear) {
-		boolean remote = false;
+		boolean retorno = false;
 		
-		if(this.year == miYeaer)
+		if(this.year == miYear)
 			
 			retorno = true;
 	
@@ -157,15 +179,23 @@ public class Date {
 	}
 	public boolean isSameYearNoIf(Date  miFecha) {
 		
-		Systeam.out.println ("opcion No IF");
+		System.out.println ("opcion No IF");
 		
-		return (this.year == miFecha.getYa());
+		return (this.year == miFecha.getYear());
+		
+	}
+	
+	public boolean isSameYearNoIf(int  miYear) {
+		
+		System.out.println ("opcion No IF");
+		
+		return (this.year == miYear);
 		
 	}
 	public int getYear() {
 		return year;
 	}
-	}
+	
 		public boolean setYear(int Year) {
 			boolean remote = false;
 			
@@ -175,10 +205,110 @@ public class Date {
 				retorno = true;
 			System.out.println("opcion Enteros");
 			return retorno;
+		}
+		// MONTH
+		
+		public boolean isSameMonth(Date miFecha) {
+			boolean retorno = false;
 			
-
+			if(this.month == miFecha.getMonth())
 				
-
+				retorno = true;
+		
+				System.out.println("opcion Fechas");
+			return retorno;
+		}
+		public boolean isSameMonth(int miMonth) {
+			boolean retorno = false;
+			
+			if(this.month == miMonth)
+				
+				retorno = true;
+		
+				System.out.println("opcion Enteros");
+			return retorno;
+		}
+		public boolean isSameMonthNoIf(Date month) {
+			
+			System.out.println ("opcion No IF");
+			
+			return (this.month == miMonth.getMonth());
+			
+		}
+		
+		public boolean isSameMonthNoIf(int  miMonth) {
+			
+			System.out.println ("opcion No IF");
+			
+			return (this.month == miMonth);
+			
+		}
+		public int getMonth() {
+			return month;
+		}
+		
+			public boolean setMonth(int month) {
+				boolean remote = false;
+				
+				if(month > -1)
+				
+					
+					retorno = true;
+				System.out.println("opcion Enteros");
+				return retorno;
+			}
+				
+			// DAY
+			
+			public boolean isSameYear(Date miFecha) {
+				boolean retorno = false;
+				
+				if(this.year == miFecha.getYear())
+					
+					retorno = true;
+			
+					System.out.println("opcion Fechas");
+				return retorno;
+			}
+			public boolean isSameYear(int miYear) {
+				boolean retorno = false;
+				
+				if(this.year == miYear)
+					
+					retorno = true;
+			
+					System.out.println("opcion Enteros");
+				return retorno;
+			}
+			public boolean isSameYearNoIf(Date  miFecha) {
+				
+				System.out.println ("opcion No IF");
+				
+				return (this.year == miFecha.getYear());
+				
+			}
+			
+			public boolean isSameYearNoIf(int  miYear) {
+				
+				System.out.println ("opcion No IF");
+				
+				return (this.year == miYear);
+				
+			}
+			public int getYear() {
+				return year;
+			}
+			
+				public boolean setYear(int Year) {
+					boolean remote = false;
+					
+					if(year > -1)
+					
+						
+						retorno = true;
+					System.out.println("opcion Enteros");
+					return retorno;
+				}
 	public String toString() {
 		return "DATE[day"+day+", month="+month+", year="+year+"]";
 	}
