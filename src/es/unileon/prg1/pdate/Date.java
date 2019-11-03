@@ -8,9 +8,6 @@ public class Date {
 	private int day;
 	private int month;
 	private int year;
-	setday(day);
-	setmonth(month);
-	setyear(month);
 
 	Date(){
 		this.day = 1;
@@ -142,6 +139,120 @@ public class Date {
 		return result;
 	}
 	
+	public String getMonthName() {
+		String result;
+		
+		switch(this.month) {
+		//primavera marzo junio
+		case 3 :
+		case 4 :
+		case 5 :
+		case 6 :
+		{
+			result = "primavera";
+			break;
+		}
+		//verano junio septiembre
+		case 6 :
+		case 7 :
+		case 8 :
+		case 9 :
+		{
+			result = "verano";
+			break;
+		}
+		//otoño septiembre diciembre
+		case 9 :
+		case 10 :
+		case 11 :
+		case 12 :
+		{
+			result = "otoño";
+			break;
+		}
+		//invierno diciembre marzo
+		case 12 :
+		case 1 :
+		case 2 :
+		case 3 :
+		{
+			result = "invierno";
+			break;
+		}
+		
+		
+		case 1:
+		{
+			result = "Enero";
+			break;
+		}
+		case 2:
+		{
+			result = "	Febrero";
+			break;
+		}
+		case 3:
+		{
+			result = "Marzo";
+			break;
+		}
+		case 4:
+		{
+			result = "Abrl";
+			break;
+		}
+		case 5:
+		{
+			result = "Mayo";
+			break;
+		}
+		case 6:
+		{
+			result = "Junio";
+			break;
+		}
+		case 7:
+		{
+			result = "Julio";
+			break;
+		}
+		case 8:
+		{
+			result = "Agosto";
+			break;
+		}
+		case 9:
+		{
+			result = "Septiembre";
+			break;
+		}
+		case 10:
+		{
+			result = "Octubre";
+			break;
+		}
+		case 11:
+		{
+			result = "Noviembre";
+			break;
+		}
+		case 12:
+		{
+			result = "Diciembre";
+			break;
+		}
+		default:
+		{
+			result= "Error";
+		}
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
 	public int getYear() {
 		return year;
 	}
@@ -215,7 +326,7 @@ public class Date {
 				
 				retorno = true;
 		
-				System.out.println("opcion Fechas");
+				System.out.println("opcion mes");
 			return retorno;
 		}
 		public boolean isSameMonth(int miMonth) {
@@ -260,46 +371,46 @@ public class Date {
 				
 			// DAY
 			
-			public boolean isSameYear(Date miFecha) {
+			public boolean isSameDay(Date miDay) {
 				boolean retorno = false;
 				
-				if(this.year == miFecha.getYear())
+				if(this.day == miDay.getDay())
 					
 					retorno = true;
 			
-					System.out.println("opcion Fechas");
+					System.out.println("opcion dia");
 				return retorno;
 			}
-			public boolean isSameYear(int miYear) {
+			public boolean isSameDay(int miDay) {
 				boolean retorno = false;
 				
-				if(this.year == miYear)
+				if(this.day == miDay)
 					
 					retorno = true;
 			
 					System.out.println("opcion Enteros");
 				return retorno;
 			}
-			public boolean isSameYearNoIf(Date  miFecha) {
+			public boolean isSameDayNoIf(Date  miDay) {
 				
 				System.out.println ("opcion No IF");
 				
-				return (this.year == miFecha.getYear());
+				return (this.day == miFecha.getDay());
 				
 			}
 			
-			public boolean isSameYearNoIf(int  miYear) {
+			public boolean isSameDayNoIf(int  miDay) {
 				
 				System.out.println ("opcion No IF");
 				
-				return (this.year == miYear);
+				return (this.day == miDay);
 				
 			}
-			public int getYear() {
-				return year;
+			public int getDay() {
+				return day;
 			}
 			
-				public boolean setYear(int Year) {
+				public boolean setDay(int Day) {
 					boolean remote = false;
 					
 					if(year > -1)

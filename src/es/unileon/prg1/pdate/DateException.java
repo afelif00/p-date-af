@@ -6,8 +6,15 @@ public class DateException {
 		// TODO Auto-generated constructor stub
 		
 	}
-	public DateException() {
-		
+	public void setday(int day) {
+		day = ;
 	}
+	public void setmonth(int month) {
+		month =;
+	}
+	public void setyear(int year) {
+		year =;
+	}
+
 }
 
