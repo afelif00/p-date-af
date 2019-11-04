@@ -1,4 +1,7 @@
 package es.unileon.prg1.pdate;
+
+import es.unileon.prg1.date.DateException;
+
 /**
  * implementacion de la clase DATE para la clase 1
  * @author andres
@@ -15,19 +18,17 @@ public class Date {
 		this.day = 1;
 		this.month= 1;
 		this.year = 2020;
-		setDay(day);
-		setMonth(month);
-		setYear(year);
 		}
 	/**
 	 * 
 	 * @param day
 	 * @param month
 	 * @param year
+	 * @throws DateException 
 	 */
 		
-	public Date(int day, int month, int year){
-		if((day <32)&&(day>0)&&(month>o)&&(month<13)&&(year>-1)){
+	public Date(int day, int month, int year) throws DateException{
+		if((day <32)&&(day>0)&&(month>0)&&(month<13)&&(year>-1)){
 		this.day = day;
 		this.month= month;
 		this.year = year;
@@ -45,18 +46,18 @@ public class Date {
 	}
 	
 
-	public int getMonth() {
+	/*public int getMonth() {
 		return this.month;
 		
 	}
-	public void setMonth(int month) {
+	public void setMonth(int month) throws DateException {
 		if ((month < 13)&&(month > 0))
 			this.month = month;
 		else
 			throw new DateException("Fecha fuera del intervalo");
 		
 		
-	}
+	}*/
 	
 	
 	
@@ -97,15 +98,15 @@ public class Date {
 		return (this.year == miYear);
 		
 	}
-	public int getYear1() {
+	public int getYear() {
 		return year;
 	}
 	
-		public boolean setYear1(int Year) {
-			boolean remote = false;
+		public boolean setYear(int Year) {
+			boolean retorno = false;
 			
 			if(year > -1)
-			
+				this.year = Year;
 				
 				retorno = true;
 			System.out.println("opcion Enteros");
@@ -137,7 +138,7 @@ public class Date {
 			
 			System.out.println ("opcion No IF");
 			
-			return (this.month == miMonth.getMonth());
+			return (this.month == month.getMonth());
 			
 		}
 		
@@ -148,15 +149,15 @@ public class Date {
 			return (this.month == miMonth);
 			
 		}
-		public int getMonth1(){
+		public int getMonth(){
 			return month;
 		}
 		
-			public boolean setMonth1(int month) {
+			public boolean setMonth(int month) {
 				boolean remote = false;
 				
-				if(month > -1)
-				
+				if(month > 0 && month < 13)
+					this.month = month;
 					
 					remote = true;
 				System.out.println("opcion Enteros");
@@ -207,8 +208,8 @@ public class Date {
 				public boolean setDay(int day) {
 					boolean remote = false;
 					
-					if(year > -1)
-					
+					if(day > 0 && day < 32)
+						this.day = day;
 						
 						remote = true;
 					System.out.println("opcion Enteros");
@@ -408,18 +409,257 @@ public class Date {
 			}
 			//MESES RESTANTES
 				public int getMonthsLeft() {
-					if()
+					return(12 - this.month);
+				}
+				
+			//devolver fecha en formato de cadena de texto
+				public String toString() {
+					return "DATE[day"+day+", month="+month+", year="+year+"]";
+				}
+				
+				//devolver todas las fechas hasta el final de mes
+				public void getMonthDate(){
+					int dias = 0;
+				switch(this.month){
+					case 2:
+					{
+						dias = 29;
+						break;
+					}
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+					{
+						dias = 30;
+						break;
+					}
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+					case 12:
+					{
+						dias = 31;
+						break;
+					}
+					default:
+					{
+						dias = 0;	
+					}
+				}					
+				
+				for(int i = this.day+1 ; i <= dias ; i++) {
+					System.out.println(i+"/"+this.month+"/"+this.year);
+				}
+				
+				}				
+				
+				//devolver todas los meses con el mismo numero de dias
+				public String getMonthDay(){
+					String meses = "";
+				switch(this.month){
+					case 2:
+					{
+						meses = "Febrero";
+						break;
+					}
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+					{
+						meses = "Abril, Junio, Septiembre, Noviembre";
+						break;
+					}
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+					case 12:
+					{
+						meses = "Enero, Marzo, Mayo ,Julio, Agosto, Octubre, Diciembre";
+						break;
+					}
+					default:
+					{
+						meses = "";	
+					}
+				}					
+				
+				return meses;
+				
+				}				
+				
+				//contar los dias desde el primer dia del año
+				public int getYearDay() {
+					int dias = 0;
+					
+					switch(this.month) {
+					case 1:
+					{
+						dias = this.day;
+						break;
+					}
+					case 2:
+					{
+						dias = 31 + this.day;
+						break;
+					}
+					case 3:
+					{
+						dias = 59 + this.day;
+						break;
+					}
+					case 4:
+					{
+						dias = 90 + this.day;
+						break;
+					}
+					case 5:
+					{
+						dias = 120 + this.day;
+						break;
+					}
+					case 6:
+					{
+						dias = 151 + this.day;
+						break;
+					}
+					case 7:
+					{
+						dias = 181 + this.day;
+						break;
+					}
+					case 8:
+					{
+						dias = 212 + this.day;
+						break;
+					}
+					case 9:
+					{
+						dias = 243 + this.day;
+						break;
+					}
+					case 10:
+					{
+						dias = 273 + this.day;
+						break;
+					}
+					case 11:
+					{
+						dias = 304 +this.day;
+						break;
+					}
+					case 12:
+					{
+						dias = 334 + this.day;
+						break;
+					}
+					default:
+					{
+						dias = 0;
+					
+				}
+					}
+					return  dias-1;
+				} 
+				
+				// numero random con while y dowhile
+				public int randomNumberWhile(){
+					int attempts = 0;
+					boolean found = false;
+					while(!found) {
+						//((Math.random() * (valorMaximo - valorMinimo)) + valorMinimo
+						attempts++;
+						int rand = (int) ((Math.random() * 364) + 1);
+						if(rand == this.getYearDay()) {
+							found = true;
+						}
+					}
+					return attempts;	
+				}
+				
+				public int randomNumberDoWhile(){
+					int attempts = 0;
+					boolean found = false;
+					do{
+						//((Math.random() * (valorMaximo - valorMinimo)) + valorMinimo
+						attempts++;
+						int rand = (int) ((Math.random() * 364) + 1);
+						if(rand == this.getYearDay()) {
+							found = true;
+						}
+					}while(!found);
+					return attempts;	
+				}
+				//saber el dia de la semana
+				public String getWeekDay(int numberDay) {
+					String diasSemana = "";
+					int semanas = 0;
+					int diasPasados = this.getYearDay();
+					semanas = (diasPasados % 7) + numberDay-1;
+					while(semanas > 7) {
+						semanas %= 7;
+					}
+					switch(semanas) {
+						case 1:
+						{
+							diasSemana ="lunes";
+							break;
+						}
+						case 2:
+						{
+							diasSemana ="manter";
+							break;
+						}
+						case 3:
+						{
+							diasSemana ="miercoles";
+							break;
+						}
+						case 4:
+						{
+							diasSemana ="jueves";
+							break;
+						}
+						case 5:
+						{
+							diasSemana ="viernes";
+							break;
+						}
+						case 6:
+						{
+							diasSemana ="sabado";
+							break;
+						}
+						case 7:
+						{
+							diasSemana ="domingo";
+							break;
+						}
+						default:
+						{
+							diasSemana ="error";
+						}
+					}
+					return diasSemana;
 				}
 				
 				
-				public void setYear(int year) {
+				
+				/*public void setYear(int year) {
 					if(year >-1);
 						this.year = year;
 					else
 						throw new DateException("Fecha fuera del intervalo");
-				}	
+				}	*/
 				
-			public void setday(int day) {
+			/*public void setday(int day) {
 					this.day = day ;
 			}
 			public void setmonth(int month) {
@@ -437,18 +677,8 @@ public class Date {
 			}
 			public int getyear(int year) {
 				return year;
-			}
+			}*/
 
-	public int ranFecha() {
-		int aleatorio = 0;
-		
-		aleatorio = new Random();
-		
-	}
-	//devolver
-	public String toString() {
-		return "DATE[day"+day+", month="+month+", year="+year+"]";
-	}
 	
 		
 	

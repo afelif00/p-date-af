@@ -1,25 +1,39 @@
 package es.unileon.prg1.pdate;
+
+import es.unileon.prg1.date.DateException;
+
 /**
  * 
  * @author andres
  *
  */
 public class pdaPrincipal {
-	public void main(String[] args) {
-		Date miFecha = new Date();
-		//Date miFecha2 = new Date(1,11,2020);
+	public void main(String[] args) throws DateException {
+		//Date miFecha = new Date();
+		Date miFecha2 = new Date(1,11,2020);
 		
-		System.out.println(miFecha);
-		//System.out.println(miFecha2);
+		//System.out.println(miFecha);
+		System.out.println(miFecha2.isSame(new Date(1,11,2020)));
+		System.out.println(miFecha2.getMonthName());
+		System.out.println(miFecha2.getMonthDay());
+		System.out.println(miFecha2.getMonthsLeft());
+		miFecha2.getMonthDate();
+		System.out.println(miFecha2.getSeason());
+		System.out.println(miFecha2.toString());
+		System.out.println(miFecha2.getYearDay());
+		System.out.println(miFecha2.randomNumberDoWhile());
+		System.out.println(miFecha2.randomNumberWhile());
+		System.out.println(miFecha2.getWeekDay(3));
+		System.out.println(miFecha2.getDiasMes());
 		
 		Date today;
 		
-		try {
-			today = new date(99, 14, 2017);
-			Systeam.out.println(today.toString());
+		/*try {
+			today = new Date(99, 14, 2017);
+			System.out.println(today.toString());
 		}catch(Date Exception e) {
 			System.out.println(e.getMessage());
-		}
+		}*/
 		
 		
 		}
